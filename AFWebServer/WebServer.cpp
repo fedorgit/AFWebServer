@@ -25,14 +25,16 @@ namespace all
 		// ѕервый аргумент функци€ должна быть или глобальной или статической
 		// ¬торой аргумент передаем через ref обертку и видимо принимает как ссылку (устарело)
 		// ѕросто передаем ссылку на выделенную в пам€ти соединение с к клиентом
-		thread thread_client(sendHttp2Thread, client);
+		thread thread_client(sendHttpThread, client);
 		thread_client.detach();
 		this_thread::sleep_for(chrono::milliseconds(2));
 
 	}
 
-	void WebServer::sendHttp2Thread(Client client)
+	void WebServer::sendHttpThread(Client client)
 	{
+		Http http(&client);
+
 		// TODO: если понадобитс€ доп. обработка.
 		// ...
 

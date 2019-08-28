@@ -7,6 +7,7 @@
 
 #include "WebConfig.hpp"
 #include "Client.hpp"
+#include "Http.hpp"
 
 #include "Logger.hpp"
 
@@ -27,7 +28,7 @@ namespace all
 
 		void response(Client client);
 
-		static void sendHttp2Thread(Client client);
+		static void sendHttpThread(Client client);
 
 	public:
 
