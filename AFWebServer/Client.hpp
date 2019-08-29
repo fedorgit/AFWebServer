@@ -23,8 +23,10 @@ namespace all
 
 		string getAddress();
 
+		TcpSocket* getSocket();
 
 		Client(TcpSocket* connection);
+
 		~Client();
 	};
 }

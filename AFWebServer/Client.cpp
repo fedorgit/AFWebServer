@@ -7,6 +7,11 @@ namespace all
 		return _connection->getRemoteAddress().toString() + ":" + to_string(_connection->getRemotePort());
 	}
 
+	TcpSocket* Client::getSocket()
+	{
+		return this->_connection;
+	}
+
 	Client::Client(TcpSocket* connection)
 	{
 		this->_connection = connection;

@@ -3,6 +3,7 @@
 
 
 #include "AppConfig.hpp"
+#include "AppHttpStatus.hpp"
 #include "Client.hpp"
 #include "Logger.hpp"
 
@@ -26,7 +27,16 @@ namespace all
 
 		Client* _client;
 
+		byte* _bufferHeaders;
+		byte* _bufferBody;
+		
+
+		vector<string> headers;
+
+
 		string getHeaders();
+
+		void sendError(int code);
 
 	public:
 
